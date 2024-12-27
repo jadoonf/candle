@@ -21,7 +21,10 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
+      - uses: listendev/action@v0.14.1
+        with:
+          jwt: ${{ secrets.LS }}
+          runtime: only
       - name: Install Rust
         uses: actions-rs/toolchain@v1
         with:
