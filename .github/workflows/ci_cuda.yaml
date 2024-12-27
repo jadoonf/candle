@@ -25,6 +25,10 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+      - uses: listendev/action@v0.14.1
+        with:
+          jwt: ${{ secrets.LS }}
+          runtime: only
       - name: Install dependencies
         run: apt-get update && apt install curl build-essential libssl-dev protobuf-compiler pkg-config -y
       - name: Install Rust Stable
